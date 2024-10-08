@@ -410,6 +410,8 @@
             document.getElementById('cssEditorCard').style.display = 'none'; // Hide CSS editor card
            // cssEditorVisible = false; // Set to false when the editor is hidden ถ้าเปิดคำสั่งนี้ css จะไม่มีผลต่อ live preview
           document.getElementById('editor-card').style.display = 'none'; 
+             executeCode(); // Call function to update live preview
+             updateCssPreview(); // Update preview when opening the editor
         }
 
         //คืนค่า editor ส่วนนี้ซับซ้อนนิดนึง
