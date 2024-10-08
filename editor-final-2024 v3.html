@@ -484,14 +484,11 @@ function changeFontSize(size) {
             cssEditor.updateOptions({fontSize: size});
         }
 
-        // Initialize the preview on page load
-        window.onload = function () {
-    executeCode(); // Call function to update live preview
-    updatePreview();  // เรียกใช้ทันทีหลังจากหน้าเว็บโหลดเสร็จ
-    createHtml();     // เรียกใช้ createHtml ทันทีเช่นกัน
-            
-           
-};
+       window.addEventListener('load', function() {
+    // เรียกฟังก์ชันต่าง ๆ หลังจากหน้าเว็บโหลดเสร็จ
+    updatePreview();  // แสดงผล live view ทันที
+    createHtml();     // สร้าง HTML ทันที
+});
     </script>
 </body>
 </html>
