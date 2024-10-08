@@ -486,14 +486,10 @@ function changeFontSize(size) {
 
         // Initialize the preview on page load
         window.onload = function () {
+    executeCode(); // Call function to update live preview
     updatePreview();  // เรียกใช้ทันทีหลังจากหน้าเว็บโหลดเสร็จ
     createHtml();     // เรียกใช้ createHtml ทันทีเช่นกัน
-            const htmlContent = editor.getValue();
-            const iframe = document.getElementById('result');
-            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            iframeDocument.open();
-            iframeDocument.write(htmlContent);
-            iframeDocument.close();
+            
            
 };
     </script>
