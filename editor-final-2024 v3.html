@@ -488,6 +488,13 @@ function changeFontSize(size) {
         window.onload = function () {
     updatePreview();  // เรียกใช้ทันทีหลังจากหน้าเว็บโหลดเสร็จ
     createHtml();     // เรียกใช้ createHtml ทันทีเช่นกัน
+            const htmlContent = editor.getValue();
+            const iframe = document.getElementById('result');
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDocument.open();
+            iframeDocument.write(htmlContent);
+            iframeDocument.close();
+           
 };
     </script>
 </body>
