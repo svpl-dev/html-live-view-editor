@@ -486,9 +486,9 @@ function changeFontSize(size) {
 
         // Initialize the preview on page load
         window.onload = function () {
-            setTimeout(updatePreview, 1000);
-            createHtml();
-        };    
+    updatePreview();  // เรียกใช้ทันทีหลังจากหน้าเว็บโหลดเสร็จ
+    createHtml();     // เรียกใช้ createHtml ทันทีเช่นกัน
+};
     </script>
 </body>
 </html>
