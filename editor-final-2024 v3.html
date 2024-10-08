@@ -107,8 +107,6 @@
             padding: 10px;
           
             background-color: #f77104e8;
-
-
         }
 
         .card-body {
@@ -136,9 +134,7 @@
             background-color: white;
         }
 
-      
-
-        /* Button styles */
+       /* Button styles */
         .card-footer {
             background-color: #f1f1f1;
             padding: 10px;
@@ -190,16 +186,11 @@
 
         .btn-warning{
             background-color: #f7039a;
-
         }
 
         .btn-warning:hover {
             background-color: #e2458f;
         }
-
-
-
-
 
         .btn-dark {
             background-color: #343a40;
@@ -226,8 +217,7 @@
           margin-top: 5px;
         }
         .img-logo{
-             
-          
+                       
             height: 15%; width: 10px;
         }
 
@@ -290,9 +280,7 @@
         <div class="card-footer" id="card-footer">
             <button class="btn btn-success" onclick="createHtml()">สร้าง HTML ใหม่</button>
             <button class="btn btn-info" onclick="openCssEditor()">เปิด CSS Editor</button>
-          
             <button class="btn btn-info" onclick="closeCssEditor()">ปิด CSS Editor</button>
-       
             <button class="btn btn-primary" onclick="saveFile()">ส่งออก HTML</button>
             <button class="btn btn-light" onclick="setLightTheme()">ธีมสว่าง</button>
             <button class="btn btn-dark" onclick="setDarkTheme()">ธีมมืด</button>
@@ -323,8 +311,6 @@
         
     </div>
 
-
-
     <!-- Footer -->
     <div class="footer">
         <p class="">Copyright by Sivapol Lanlana 2024. dev by HTML , CSS , js</p>
@@ -339,7 +325,6 @@
         require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs' } });
         require(['vs/editor/editor.main'], function () {
             editor = monaco.editor.create(document.getElementById('editorContainer'), {
-
                 value: `<!DOCTYPE html>
 <html lang="th">
 <head>
@@ -371,7 +356,7 @@
             });
         });
        
-          ///////////สร้างไฟล์ html////////////
+          ///////////สร้างไฟล์ html//////////// ส่วนนี้ยังต้องปรับปรุงเนื่องจาก function ยังทำงานไม่สมบูรณ์ 555
         function createHtml() {
             const htmlContent = editor.getValue();
             const iframe = document.getElementById('result');
@@ -381,6 +366,7 @@
             iframeDocument.close();
         }
 
+         // ส่วนแสดงผล การ์ด css editor 
         function openCssEditor() {
             if (!cssEditorVisible) {
                 // Create CSS editor if not already created
@@ -393,12 +379,12 @@
                     });
 
 
-                    // Auto update live preview when content changes
+                    // Auto update live preview เมื่อมีการปรับปรุงและแก้ไขใน html editor และ css editor
             editor.onDidChangeModelContent(function() {
                 executeCode(); // Call function to update live preview
             });
 
-                    // Auto update live preview when CSS content changes
+                    // Auto update live preview when CSS content changes เมื่อมีการปรับปรุงและแก้ไขใน html editor และ css editor
                     cssEditor.onDidChangeModelContent(function() {
                         updateCssPreview(); // Call function to update live preview
                     });
@@ -407,26 +393,23 @@
                 });
             }
 
-            // Show CSS editor container
+            // Show CSS editor container แสดงคอนเทนเนอร์ และมีผลต่อ live preview อัตโนมัติ
             document.getElementById('cssEditorCard').style.display = 'block';
             document.getElementById('cssEditorContainer').style.height = '100%'; // Set height to 100%
             updateCssPreview(); // Update preview when opening the editor
         }
-            //ซ่อน css editor
+            //ซ่อน css editor เมื่อกดปุ่มปิด css editor
         function closeCssEditor() {
             document.getElementById('cssEditorCard').style.display = 'none'; // Hide CSS editor card
            // cssEditorVisible = false; // Set to false when the editor is hidden
 
         }
-
-
-        //แสดงผล
+         
+        //เมื่อกดปุ่มแสดงผล จะสั่งปิด editor ทั้งหมด
         function show() {
             document.getElementById('cssEditorCard').style.display = 'none'; // Hide CSS editor card
-           // cssEditorVisible = false; // Set to false when the editor is hidden
-          document.getElementById('editor-card').style.display = 'none';
-          
-
+           // cssEditorVisible = false; // Set to false when the editor is hidden ถ้าเปิดคำสั่งนี้ css จะไม่มีผลต่อ live preview
+          document.getElementById('editor-card').style.display = 'none'; 
         }
 
         //คืนค่า editor ส่วนนี้ซับซ้อนนิดนึง
@@ -438,8 +421,6 @@
            document.getElementById('edirot-card').style.height = '50%';
           // document.getElementById('Container').style.height = '50%';
            document.getElementById('card-footer').style.display = 'block';
-
-           
         }
 
           // สำหรับแสดงผล ร่วมกับ html editor เพื่อให้มีผลต่อ live preview แบบอัตโนมัติ
@@ -455,8 +436,6 @@
             `);
             iframeDocument.close();
         }
-
-
         function executeCode() {
             createHtml(); // Call to create HTML
             updateCssPreview(); // Call to update CSS
@@ -495,19 +474,6 @@
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        
-
 // Function กำหนดขนาดตัวอักษรใน editor 
 function changeFontSize(size) {
             document.getElementById('editorContainer').style.fontSize = size;
@@ -518,21 +484,7 @@ function changeFontSize(size) {
         // Initialize the preview on page load
         window.onload = function () {
             setTimeout(updatePreview, 1000);
-        };
-
-
-
-
-
-
-
-
-
-
-        
+        };    
     </script>
-
- 
-
 </body>
 </html>
