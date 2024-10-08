@@ -17,4 +17,5 @@ https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs
 
 ![2024-10-08_200438](https://github.com/user-attachments/assets/477aab27-35b9-4a96-aa6e-45fb4799aad2)
 
-ส
+มีปัญหาการใช้งานแจ้งครูศิวพลที่
+0868697898 LineID svpl...
