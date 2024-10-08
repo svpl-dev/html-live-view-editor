@@ -371,7 +371,7 @@
             });
         });
        
-          ///////////สร้างไฟล์ htl////////////
+          ///////////สร้างไฟล์ html////////////
         function createHtml() {
             const htmlContent = editor.getValue();
             const iframe = document.getElementById('result');
@@ -429,7 +429,7 @@
 
         }
 
-        //คืนค่า editor
+        //คืนค่า editor ส่วนนี้ซับซ้อนนิดนึง
         function unshow() {
           //  document.getElementById('cssEditorCard').style.display = 'block'; // Hide CSS editor card
            // cssEditorVisible = false; // Set to false when the editor is hidden
@@ -442,7 +442,7 @@
            
         }
 
-
+          // สำหรับแสดงผล ร่วมกับ html editor เพื่อให้มีผลต่อ live preview แบบอัตโนมัติ
         function updateCssPreview() {
             const cssContent = cssEditor.getValue();
             const htmlContent = editor.getValue();
